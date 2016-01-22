@@ -14,7 +14,6 @@ public class TANK_Fight extends JFrame {
 
     public static void main(String[] args) {
         TANK_Fight ma = new TANK_Fight();
-        System.out.println("对飒飒的 嘿嘿 都是达第三方");
     }
 
     public TANK_Fight() {
