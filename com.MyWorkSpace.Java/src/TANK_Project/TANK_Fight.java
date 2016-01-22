@@ -14,17 +14,17 @@ public class TANK_Fight extends JFrame {
 
     public static void main(String[] args) {
         TANK_Fight ma = new TANK_Fight();
-        System.out.println("¶ÔìªìªµÄsdsd ¶¼ÊÇ´ïµÚÈı·½");
+        System.out.println("å¯¹é£’é£’çš„ å˜¿å˜¿ éƒ½æ˜¯è¾¾ç¬¬ä¸‰æ–¹");
     }
 
     public TANK_Fight() {
         jmBar = new JMenuBar();
-        jm = new JMenu("ÓÎÏ·(G)");
-        jm1 = new JMenu("ÍË³ö(D)");
-        jmi1 = new JMenuItem("¿ªÊ¼ÓÎÏ·");
-        jmi2 = new JMenuItem("¼ÌĞøÓÎÏ·");
-        jmi3 = new JMenuItem("±£´æÍË³ö");
-        jmi4 = new JMenuItem("ÍË³öÓÎÏ·");
+        jm = new JMenu("æ¸¸æˆ(G)");
+        jm1 = new JMenu("é€€å‡º(D)");
+        jmi1 = new JMenuItem("å¼€å§‹æ¸¸æˆ");
+        jmi2 = new JMenuItem("ç»§ç»­æ¸¸æˆ");
+        jmi3 = new JMenuItem("ä¿å­˜é€€å‡º");
+        jmi4 = new JMenuItem("é€€å‡ºæ¸¸æˆ");
         jm.add(jmi1);
         jm.add(jmi2);
         jm1.add(jmi3);
@@ -37,7 +37,7 @@ public class TANK_Fight extends JFrame {
         panel.setBackground(Color.WHITE);
         this.add(panel);
         this.addKeyListener(panel);
-        this.setTitle("Ì¹¿Ë´óÕ½");
+        this.setTitle("å¦å…‹å¤§æˆ˜");
         this.setIconImage((new ImageIcon("image/tanklogo.jpg")).getImage());
         this.setSize(900, 650);
         this.setLocation(200, 50);
@@ -50,7 +50,7 @@ public class TANK_Fight extends JFrame {
 class MyPanel extends JPanel implements KeyListener, Runnable {
     My_Tank my_tank = null;
     Vector<Eemy_Tank> eemy_tanks = new Vector<Eemy_Tank>();
-    int shu = 3;//µĞ·½Ì¹¿ËÊıÁ¿
+    int shu = 3;//æ•Œæ–¹å¦å…‹æ•°é‡
     Image bm1 = null;
     Image bm2 = null;
     Image bm3 = null;
@@ -118,15 +118,15 @@ class MyPanel extends JPanel implements KeyListener, Runnable {
 
     public void drawTank(int x, int y, Graphics g, int direction, int clas) {
         switch (clas) {
-            case 0://ÎÒµÄÌ¹¿Ë
+            case 0://æˆ‘çš„å¦å…‹
                 g.setColor(Color.yellow);
                 break;
-            case 1://µĞ·½Ì¹¿Ë
+            case 1://æ•Œæ–¹å¦å…‹
                 g.setColor(Color.green);
                 break;
         }
         switch (direction) {
-            case 0: {//·½ÏòÏòÉÏ
+            case 0: {//æ–¹å‘å‘ä¸Š
                 g.fill3DRect(x - 20, y - 20, 13, 40, false);
                 g.fill3DRect(x + 7, y - 20, 13, 40, false);
                 g.fill3DRect(x - 7, y - 12, 14, 24, false);
@@ -134,7 +134,7 @@ class MyPanel extends JPanel implements KeyListener, Runnable {
                 g.fillRect(x - 1, y - 23, 2, 23);
                 break;
             }
-            case 2: {//·½ÏòÏò×ó
+            case 2: {//æ–¹å‘å‘å·¦
                 g.fill3DRect(x - 20, y - 20, 40, 13, false);
                 g.fill3DRect(x - 20, y + 7, 40, 13, false);
                 g.fill3DRect(x - 12, y - 7, 24, 14, false);
@@ -142,7 +142,7 @@ class MyPanel extends JPanel implements KeyListener, Runnable {
                 g.fillRect(x - 23, y - 1, 23, 2);
                 break;
             }
-            case 1://·½ÏòÏòÏÂ
+            case 1://æ–¹å‘å‘ä¸‹
             {
                 g.fill3DRect(x - 20, y - 20, 13, 40, false);
                 g.fill3DRect(x + 7, y - 20, 13, 40, false);
@@ -151,7 +151,7 @@ class MyPanel extends JPanel implements KeyListener, Runnable {
                 g.fillRect(x - 1, y, 2, 23);
                 break;
             }
-            case 3: {//·½ÏòÏòÓÒ
+            case 3: {//æ–¹å‘å‘å³
                 g.fill3DRect(x - 20, y - 20, 40, 13, false);
                 g.fill3DRect(x - 20, y + 7, 40, 13, false);
                 g.fill3DRect(x - 12, y - 7, 24, 14, false);
