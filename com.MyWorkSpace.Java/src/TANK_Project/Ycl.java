@@ -108,6 +108,7 @@ class Eemy_Tank extends Tank implements Runnable {
     int speed = 40;
     int time = 0;
     Vector<Zidan> ezidans = new Vector<Zidan>();
+    Zidan zd = null;
 
     public Eemy_Tank(int x, int y) {
         super(x, y);
@@ -170,11 +171,13 @@ class Eemy_Tank extends Tank implements Runnable {
             if (this.life == false)
                 break;
         }
+    }
+
+    public void firezidan() {
         this.time++;
         if (time % 2 == 0) {
             if (life) {
                 if (ezidans.size() < 5) {
-                    Zidan zd = null;
                     switch (direction) {
                         case 0:
                             zd = new Zidan(x, y - 25, direction);
@@ -193,8 +196,7 @@ class Eemy_Tank extends Tank implements Runnable {
                             ezidans.add(zd);
                             break;
                     }
-                    Thread t2 = new Thread(zd);
-                    t2.start();
+
                 }
             }
         }

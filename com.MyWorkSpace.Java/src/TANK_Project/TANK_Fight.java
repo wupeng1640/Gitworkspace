@@ -65,6 +65,8 @@ class MyPanel extends JPanel implements KeyListener, Runnable {
             eemy_tanks.add(eemy_tank);
             Thread t3=new Thread(zd);
             t3.start();
+            Thread t2 = new Thread(zd);
+            t2.start();
         }
         // bm1 = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource("/boom1.gif"));
         // bm2 = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource("/boom2.gif"));
