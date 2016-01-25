@@ -167,17 +167,12 @@ class Eemy_Tank extends Tank implements Runnable {
                     break;
             }
             this.direction = (int) (Math.random() * 4);
-
             if (this.life == false)
                 break;
-        }
-    }
-
-    public void firezidan() {
         this.time++;
-        if (time % 2 == 0) {
+       // if (time % 2 == 0) {
             if (life) {
-                if (ezidans.size() < 5) {
+                if (ezidans.size() < 6) {
                     switch (direction) {
                         case 0:
                             zd = new Zidan(x, y - 25, direction);
@@ -196,13 +191,15 @@ class Eemy_Tank extends Tank implements Runnable {
                             ezidans.add(zd);
                             break;
                     }
+                    Thread tt2 = new Thread(zd);
+                    tt2.start();
 
                 }
             }
         }
     }
+  //}
 }
-
 
 class Zidan implements Runnable {
     int x;
